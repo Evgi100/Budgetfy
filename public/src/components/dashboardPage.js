@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import  ExpenseListFilters from './expenseListFilters'
-import ExpenseList from './ExpenseList'
+import ExpenseList from './expenseList'
 
 const expenseDashboardPage = (props) => (
     <div>
