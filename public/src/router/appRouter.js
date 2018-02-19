@@ -1,33 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom'
+import { Router, Route, Switch, Link, NavLink } from 'react-router-dom'
 
-import Header from '../components/header.js'
 import notFoundPage from '../components/notFoundPage.js'
-import helpPage from '../components/helpPage.js'
-import  editExpensePage from '../components/editPage.js'
-import  addExpensePage from '../components/addExpensePage.js'
+import editExpensePage from '../components/editPage.js'
+import addExpensePage from '../components/addExpensePage.js'
 import expenseDashboardPage from '../components/dashboardPage.js'
+import loginPage from '../components/loginPage'
 
+import PrivateRoute from './privateRoute'
+import PublicRoute from './publicRoute'
 
+import createHistory from 'history/createBrowserHistory'
 
+export const history = createHistory();
 
-const AppRouter=()=>(
-        <BrowserRouter>
-            <div>
-                <Header />
-                <Switch>
-                    <Route path='/' component={expenseDashboardPage} exact={true} />
-                    <Route path='/create' component={addExpensePage} />
-                    <Route path='/edit/:id' component={editExpensePage} />
-                    <Route path='/help' component={helpPage} />
-                    <Route component={notFoundPage} />
-                </Switch>
-            </div>
-        </BrowserRouter>
-    );    
+// The browserRouter create his own instance of history 
+// When we install and use the history library we can  pass and use our own history
+const AppRouter = () => (
+    <Router history={history}>
+        <div>
+            <Switch>
+                <PublicRoute path='/' component={loginPage} exact={true} />
+                <PrivateRoute path='/dashboard' component={expenseDashboardPage} />
+                <PrivateRoute path='/create' component={addExpensePage} />
+                <PrivateRoute path='/edit/:id' component={editExpensePage} />
+                <Route component={notFoundPage} />
+            </Switch>
+        </div>
+    </Router>
+);
 
-    export default AppRouter
+export default AppRouter
 
 
 

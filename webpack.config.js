@@ -8,7 +8,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports = (env) => {
 
     const isProduction = env === 'production';
-    const CSSextract = new ExtractTextPlugin('styles.css')
+    const CSSExtract = new ExtractTextPlugin('styles.css')
     return {
         entry: './public/src/app.js',
         output: {
@@ -21,7 +21,7 @@ module.exports = (env) => {
                 test: /\.js$/,
                 exclude: /node.modules/
             }, {
-                use: CSSextract.extract({
+                use: CSSExtract.extract({
                     use: [{
                         loader: 'css-loader',
                         options: {
@@ -39,7 +39,7 @@ module.exports = (env) => {
                 test: /\.s?css$/,
             }]
         },
-        plugins: [CSSextract],
+        plugins: [CSSExtract],
         devtool: isProduction ? 'source-map' : 'inline-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),

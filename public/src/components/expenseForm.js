@@ -12,10 +12,10 @@ export default class ExpenseForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            description: props.expense? props.expense.description: '',
-            note: props.expense? props.expense.note: ' ',
-            amount:props.expense? (props.expense.amount/100).toString(): ' ',
-            createdAt: props.expense? moment(props.expense.createdAt):moment(),
+            description: props.expense ? props.expense.description : '',
+            note: props.expense ? props.expense.note : ' ',
+            amount: props.expense ? (props.expense.amount / 100).toString() : ' ',
+            createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             callendarFocused: false,
             isFormComplete: true
 
@@ -78,7 +78,7 @@ export default class ExpenseForm extends React.Component {
         return (
             <div>
                 <form >
-                    {!this.state.isFormComplete && <p>Plese enter description and amount</p>}
+                    {!this.state.isFormComplete && <p>Please enter description and amount</p>}
                     <input type="text"
                         placeholder="description"
                         autoFocus
@@ -95,13 +95,13 @@ export default class ExpenseForm extends React.Component {
                         focused={this.state.callendarFocused}
                         onFocusChange={this.onFocusChange}
                         numberOfMonths={1}
-                        isOutsideRange={() => false} //this will make days in hte past available
+                        isOutsideRange={() => false} //this will make days in the past (from the current date point) available
                     />
                     <textarea
                         value={this.state.note}
                         onChange={this.onTextChange}
                         placeholder="Add some note for your expense"></textarea>
-                    <button onClick={this.onSubmit} >{this.props.expense? 'Edit Expense': 'Add Expense'}</button>
+                    <button onClick={this.onSubmit} >{this.props.expense ? 'Edit Expense' : 'Add Expense'}</button>
                 </form>
             </div>
         )
