@@ -8,6 +8,7 @@ import { startSetExpenses } from './actions/expenses'
 import { login ,logout } from './actions/auth'
 import getVisibleExpenses from './selectors/expenses'
 import getExpenseTotal from './selectors/expenses-total'
+import LoadingMessage from './components/loadingPage'
 
 
 import './styles/styles.scss'
@@ -41,7 +42,7 @@ const renderApp = () => {
         hasRendered = true
     }
 }
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'))
+ReactDOM.render(<LoadingMessage/>, document.getElementById('app'))
 
 
 

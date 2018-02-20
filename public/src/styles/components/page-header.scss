@@ -1,0 +1,34 @@
+.page-header__title{
+ margin: 0;
+ font-weight: 300;
+
+}
+
+.page-header {
+    background-color: #f7f7f7;
+    padding: $l-size 0;
+    margin-bottom: $l-size;
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.page-header__link{
+    margin-top: $m-size;
+    background:$blue;
+    border-radius:160px;
+    color:white;
+    border: none;
+    padding: $s-size;
+    font-weight: 300;
+    font-size:$font-size-large;
+    // width:8.5rem;
+    text-decoration:none;
+    display: inline-block;
+    line-height: 1;
+}
+
+.page-header__data{
+    margin-left: $s-size
+}

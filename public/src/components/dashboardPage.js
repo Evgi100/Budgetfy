@@ -9,7 +9,11 @@ const expenseDashboardPage = (props) => (
     <div>
         <ExpensesSummary />
         <ExpenseListFilters />
+        <hr/>
+        <div className="expense-list__container">
         <ExpenseList />
+        </div>
+        
     </div>
 )
 

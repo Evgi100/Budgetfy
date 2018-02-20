@@ -6,9 +6,22 @@ import setExpenses from '../actions/expenses'
 
 
 const ExpenseList = (props) => (
-    <div>
-        <h1>Expenses List</h1>
-        <ExpenseListItem expenses={props.expenses} />
+    <div className="content-container">
+        <div className="list-header">
+            <div className="show-for-mobile">Expenses</div>
+            <div className="show-for-desktop">Expense</div>
+            <div className="show-for-desktop">Amount</div>
+        </div>
+        {
+            props.expenses.length === 0 ?
+                (
+                    <div className="list-item list-item--message">
+                        <span>No expenses</span>
+                    </div>
+                ) : (
+                    <ExpenseListItem expenses={props.expenses} />
+                )
+        }
     </div>
 )
 

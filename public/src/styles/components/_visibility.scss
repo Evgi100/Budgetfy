@@ -1,0 +1,15 @@
+.show-for-mobile{
+    font-size: 1.8rem;
+    @media(min-width:$desktop-breakpoint){
+        display: none;
+    }
+
+}
+
+.show-for-desktop{
+    font-size: 1.8rem;
+    @media(max-width:$desktop-breakpoint){
+        display: none;
+    }
+
+}

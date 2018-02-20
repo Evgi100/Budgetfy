@@ -1,0 +1,36 @@
+.form {
+display: flex;
+flex-direction: column;
+>*{
+    margin-bottom: $m-size;
+}
+}
+
+.form__error{
+    margin:0 0 $m-size 0;
+    font-style: italic;
+
+}
+
+.save-button{
+    background:$blue;
+    border-radius:160px;
+    color:white;
+    border: none;
+    padding: $s-size;
+    font-weight: 300;
+    font-size:$font-size-large ;
+    width: 22rem;
+}
+
+.button__remove{
+    background: rgb(221, 54, 32);
+    border-radius:160px;
+    color:white;
+    border: none;
+    padding: $s-size;
+    font-weight: 300;
+    font-size:$font-size-large ;
+    width: 22rem;
+}
+

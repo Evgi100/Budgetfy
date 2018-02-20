@@ -1,0 +1,25 @@
+.input-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: $m-size;
+
+    @media(min-width:$desktop-breakpoint){
+        // This is media query for the larger screen
+        flex-direction: row;
+        margin-bottom: $l-size;
+        justify-content: space-between;
+    }
+}
+
+.input-group__item{
+margin-right: $s-size;
+margin-bottom: $s-size;
+
+@media(min-width:$desktop-breakpoint){
+    // This is media query for the larger screen
+    margin:0;
+    margin-right: $l-size;
+
+}
+}

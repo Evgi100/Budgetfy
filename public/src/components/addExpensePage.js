@@ -7,11 +7,17 @@ import { connect } from 'react-redux'
 
 const addExpensePage = (props) => (
     <div>
-        <h1>Add Expense</h1>
-        <ExpenseForm onSubmit={(expense) => {
-            props.dispatch(startAddExpense(expense))
-            props.history.push('/')
-        }} />
+        <div className="page-header">
+            <div className="content-container">
+                <h1 className="page-header__title">Add Expense</h1>
+            </div>
+        </div>
+        <div className="content-container">
+            <ExpenseForm onSubmit={(expense) => {
+                props.dispatch(startAddExpense(expense))
+                props.history.push('/')
+            }} />
+        </div>
     </div>
 )
 
